@@ -31,7 +31,6 @@ class Song
 
   def self.genre_count
     counts = @@genres.inject(Hash.new(0)) { |h, e| h[e] += 1 ; h }
-      # binding.pry
   end
 
   def self.artist_count
