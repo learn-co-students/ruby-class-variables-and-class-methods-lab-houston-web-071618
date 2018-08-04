@@ -1,3 +1,5 @@
+require 'pry'
+
 class Song
 
   attr_accessor :name, :artist, :genre
@@ -28,16 +30,25 @@ class Song
   end
 
   def self.genre_count
-    genre.count = {}   #need to return a hash
-
-
+    genre_count = {}
+    @@genres.each do |genre|
+      if genre_count[genre] == nil
+        genre_count[genre] = 0
+      end
+      genre_count[genre] += 1 
+    end
+    genre_count #= { genre => num }
   end
 
   def self.artist_count
-    artist.count = {}  #need to return a hash
-
-
+    artist_count = {}
+    @@artists.each do |artist|
+      if artist_count[artist] == nil
+        artist_count[artist] = 0      
+      end
+      artist_count[artist] += 1
+    end
+    artist_count   #need to return a hash
   end
-
 
 end
